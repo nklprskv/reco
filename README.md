@@ -62,3 +62,9 @@ If Asana returns `next_page.offset`, the poller requests the next page. Each pag
 {"page 1": {...}}
 {"page 2": {...}}
 ```
+
+## TODO/IDEAS
+
+- Check Asana responses for unchanged data and skip saving when nothing changed, unless audit/history requirements say otherwise.
+- Poll more frequently if API calls are not billed per request and the account is covered by a monthly subscription. In that mode, rely more on `429` handling and retry as often as safely possible.
+- Combine pages in memory and write combined data when enough RAM is available for large responses.
